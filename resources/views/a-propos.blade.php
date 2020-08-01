@@ -2,6 +2,6 @@
 
 @section('content')
 
-    Laravel
+<h1>A propos</h1>
 
 @endsection

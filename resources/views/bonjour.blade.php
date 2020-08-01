@@ -2,6 +2,6 @@
 
 @section('content')
 
-    Laravel
+	<h1> bonjour {{$nom}}</h1>
 
 @endsection
