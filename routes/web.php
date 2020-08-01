@@ -27,3 +27,8 @@ Route::get('/bonjour/{nom}',function (){
 	$nom = request('nom');
 	return view('Bonjour',compact('nom'));
 });
+
+Route::get('/utilisateurs',function(){
+	$utilisateurs = App\Utilisateur::all();
+	return view('utilisateurs',compact('utilisateurs'))
+});
