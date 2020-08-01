@@ -15,7 +15,12 @@ Route::get('inscription',function(){
 });
 
 Route::POST('inscription',function(){
-	return 'votre email est '.request('email');
+	App\Utilisateur::create([
+		'email'=>request('email'),
+		'password'=>bcrypt(request('password'))
+	]);
+	
+	return 'Enregistrement Effectué';
 });
 
 Route::get('/bonjour/{nom}',function (){
