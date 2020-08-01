@@ -20,6 +20,10 @@
                 margin: 0;
             }
 
+            .alert-danger{
+                color: red;
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -80,9 +84,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
                    @yield('content')
-                </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>

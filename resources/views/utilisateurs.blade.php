@@ -1,7 +1,9 @@
 @extends('layout')
 
 @section('content')
-<h1>Les utilisateurs</h1>
+<div class="title m-b-md">
+	Les utilisateurs
+</div>
 	<ul>
 		@foreach ($utilisateurs as $user)
 		<li>{{$user->email}}</li>

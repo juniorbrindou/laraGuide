@@ -17,9 +17,8 @@ Route::get('inscription',function(){
 Route::POST('inscription',function(){
 	request()->validate([
 		'email'=>['required','email'],
-		'password'=>['required'],
 		'password'=>['required','confirmed'],
-		'password_confirmation'=>['required']
+		'password_confirmation'=>['required','min:4']
 	]);
 	App\Utilisateur::create([
 		'email'=>request('email'),
