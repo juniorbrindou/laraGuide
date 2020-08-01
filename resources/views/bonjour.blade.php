@@ -2,6 +2,6 @@
 
 @section('content')
 
-	<h1> bonjour {{$nom}}</h1>
+	<h1 class="title"> bonjour {{$nom}}</h1>
 
 @endsection

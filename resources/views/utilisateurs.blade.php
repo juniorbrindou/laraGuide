@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<div class="title m-b-md">
+<div class="title">
 	Les utilisateurs
 </div>
 	<ul>

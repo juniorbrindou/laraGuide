@@ -1,24 +1,49 @@
 @extends('layout')
 
 @section('content')
-<div class="title m-b-md">
+<div class="title">
 	Formulaire
 </div>
-	<form method="POST">
+	<form method="POST" class="section">
 		@csrf
-		<p><input type="email" name="email" placeholder="E-mail" value="{{ old('email')}}"></p>
-			@if($errors->has('email'))
-				<span class="alert-danger">{{$errors->first('email')}}</span>
-			@endif
-		<p><input type="password" name="password" placeholder="password"></p>
-			@if($errors->has('password'))
-				<span class="alert-danger">{{$errors->first('password')}}</span>
-			@endif
-		<p><input type="password" name="password_confirmation" placeholder="password_Confirm"></p>
-			@if($errors->has('password_confirmation'))
-				<span class="alert-danger">{{$errors->first('password_confirmation')}}</span>
-			@endif
-		<p><input type="submit" name="submit"></p>
+		<div class="field">
+			<label class="label">E-mail</label>
+			<div class="control">
+				<input class="input" type="email" name="email" placeholder="E-mail" value="{{ old('email')}}">
+				@if($errors->has('email'))
+					<span class="help is-danger">{{$errors->first('email')}}</span>
+				@endif
+
+			</div>
+		</div>
+
+
+
+		<div class="field">
+			<label class="label">Password</label>
+				<input class="input" type="password" name="password" placeholder="password">
+					@if($errors->has('password'))
+						<span class="help is-danger">{{$errors->first('password')}}</span>
+					@endif
+		</div>
+
+		<div class="field">
+			<label class="label">Confirmation de Mot de passe</label>
+			<div class="control">
+				<input class="input" type="password" name="password_confirmation" placeholder="password_Confirm">
+					@if($errors->has('password_confirmation'))
+						<span class="help is-danger">{{$errors->first('password_confirmation')}}</span>
+					@endif
+			</div>
+		</div>
+
+		<div class="field">
+			<div class="control">
+				<input type="submit" class="button is-link" name="submit">
+			</div>
+		</div>
+
+
 	</form>
 
 @endsection
