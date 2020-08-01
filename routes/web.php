@@ -15,7 +15,7 @@ Route::get('inscription',function(){
 });
 
 Route::POST('inscription',function(){
-	return 'ok';
+	return 'votre email est '.request('email');
 });
 
 Route::get('/bonjour/{nom}',function (){
