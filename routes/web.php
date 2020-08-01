@@ -15,6 +15,12 @@ Route::get('inscription',function(){
 });
 
 Route::POST('inscription',function(){
+	request()->validate([
+		'email'=>['required','email'],
+		'password'=>['required'],
+		'password'=>['required','confirmed'],
+		'password_confirmation'=>['required']
+	]);
 	App\Utilisateur::create([
 		'email'=>request('email'),
 		'password'=>bcrypt(request('password'))
@@ -30,5 +36,5 @@ Route::get('/bonjour/{nom}',function (){
 
 Route::get('/utilisateurs',function(){
 	$utilisateurs = App\Utilisateur::all();
-	return view('utilisateurs',compact('utilisateurs'))
+	return view('utilisateurs',compact('utilisateurs'));
 });
