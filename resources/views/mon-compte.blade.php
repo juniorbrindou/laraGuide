@@ -3,12 +3,10 @@
 @section('content')
 <div class="section">
 
-	<div class="title">
-		Bienvenue
-	</div>
-	<p>Vous etes bien connecté</p>
+	<div class="title is-1"><h1>Bienvenue {Auth()->email}</h1></div>
 
 	<a href="/logout" class="button">Deconnexion</a>
+
 </div>
 
 

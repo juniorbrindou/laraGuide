@@ -4,9 +4,8 @@
 
 <div class="section">
 
-	<div class="title">
-		Les utilisateurs
-	</div>
+	<div class="title is-1"><h1>Les utilisateurs</h1></div>
+	
 	<ul>
 		@foreach ($utilisateurs as $user)
 		<li>{{$user->email}}</li>
