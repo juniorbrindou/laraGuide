@@ -15,6 +15,13 @@ class ConnexionController extends Controller
     		'email'=>['email','required'],
     		'password'=>['required']
     	]);
+
+    	$result = Auth()->attempt([
+    		'email' => request('email'),
+    		'password'=> request('password')
+    	]);
+
+    	dd($result);
     	return 'Vous etes loggez';
     }
 }
