@@ -32,6 +32,35 @@
 </form>
 @endif
 
+<h4 class="title is-4">Mes Messages</h4>
 
+<div class="section">
+	@foreach($myMessages as $mym)
+		<article class="message is-medium">
+			<div class="message-header">
+				<p>Titre</p>
+			</div>
+			<div class="message-body">
+				{{$mym->contenu}}
+			</div>
+		</article>
+	@endforeach
 
+</div>
+
+<h4 class="title is-4">Messages des Autres</h4>
+
+<div class="section">
+	@foreach($allMessages as $allm)
+		<article class="message is-medium">
+			<div class="message-header">
+				<p>Medium message</p>
+			</div>
+			<div class="message-body">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+			</div>
+		</article>
+	@endforeach
+
+</div>
 @endsection

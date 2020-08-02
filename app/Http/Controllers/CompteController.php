@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class CompteController extends Controller
 {
+
+
     public function accueil(){
 
     	if (Auth()->guest()) {
@@ -18,6 +20,15 @@ class CompteController extends Controller
     	return view('mon-compte');
     }
 
+
+
+
+
+
+
+
+
+
     public function logout(){
 
     	Auth()->logout();
@@ -26,6 +37,19 @@ class CompteController extends Controller
 
     	return redirect('/');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function password_update(){
 

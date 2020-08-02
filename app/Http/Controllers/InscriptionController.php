@@ -7,6 +7,9 @@ use App\Utilisateur;
 
 class InscriptionController extends Controller
 {
+
+
+
     public function form(){
 		request()->validate([
 			'email'=>['required','email'],
@@ -21,6 +24,17 @@ class InscriptionController extends Controller
 		
 		return 'Enregistrement Effectué';
     }
+
+
+
+
+
+
+
+
+
+
+
 
     public function inscription(){
 
