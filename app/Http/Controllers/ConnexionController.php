@@ -21,7 +21,11 @@ class ConnexionController extends Controller
     		'password'=> request('password')
     	]);
 
-    	dd($result);
-    	return 'Vous etes loggez';
+    	if ($result) {
+    		return redirect('/mon-compte');
+    	}
+    	return back()->WithInput()->WithErrors([
+    		'email'=>'Vos Identifiants sont Incorrectes'
+    	]);
     }
 }

@@ -12,3 +12,5 @@ Route::GET('/utilisateurs', 'UtilisateursController@liste');
 Route::GET('login','ConnexionController@loginform');
 
 Route::POST('login','ConnexionController@login');
+
+Route::GET('/mon-compte','CompteController@accueil');
