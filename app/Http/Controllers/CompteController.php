@@ -9,9 +9,10 @@ class CompteController extends Controller
     public function accueil(){
 
     	if (Auth()->guest()) {
-    		return redirect('login')->WithErrors([
-    			'email'=>'Vous devez etre connecté pour acceder à cette page'
-    		]);
+
+    		flash('Vous devez vous connecter pour acceder à cette page')->error();
+
+    		return redirect('login');
     	}
 
     	return view('mon-compte');
@@ -20,7 +21,7 @@ class CompteController extends Controller
     public function logout(){
 
     	Auth()->logout();
-
+    	flash('Vous etes déconnecté avec Succes')->success();
     	return redirect('/');
     }
 }
