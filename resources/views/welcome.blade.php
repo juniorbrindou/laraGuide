@@ -1,7 +1,10 @@
 @extends('layout')
 
 @section('content')
+<div class="section">
 
-    Laravel
+    Accueil du site Laravel
+	
+</div>
 
 @endsection

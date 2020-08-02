@@ -10,9 +10,13 @@
     </head>
     <body>
         <div class="container">
+
             @include('flash::message')
+
             @yield('content')
+
         </div>
+        
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     </body>
 </html>
