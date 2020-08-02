@@ -6,4 +6,6 @@
 </div>
 <p>Vous etes bien connecté</p>
 
+<a href="/logout" class="button">Deconnexion</a>
+
 @endsection
