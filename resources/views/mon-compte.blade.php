@@ -3,7 +3,7 @@
 @section('content')
 <div class="section">
 
-	<div class="title is-1"><h1>Bienvenue {Auth()->email}</h1></div>
+	<div class="title is-1"><h1>Bienvenue {{Auth()->user()->email}}</h1></div>
 
 	<a href="/logout" class="button">Deconnexion</a>
 
