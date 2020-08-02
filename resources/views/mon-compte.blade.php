@@ -36,8 +36,6 @@
 			<input type="submit" class="button is-link" name="submit" value="Modiffier Mot de Passe">
 		</div>
 	</div>
-
-
 </form>
 
 @endsection

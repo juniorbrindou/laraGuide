@@ -19,3 +19,5 @@ Route::GET('logout','CompteController@logout');
 Route::POST('password_update','CompteController@password_update');
 
 Route::GET('/{email}','UtilisateursController@voir');
+
+Route::POST('/message','MessageController@nouveau');
