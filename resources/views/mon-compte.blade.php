@@ -5,8 +5,6 @@
 
 	<div class="title is-1"><h1>Bienvenue {{Auth()->user()->email}}</h1></div>
 
-	<a href="/logout" class="button">Deconnexion</a>
-
 </div>
 
 

@@ -24,17 +24,29 @@
 
 			<div class="navbar-menu">
 				<div class="navbar-start">
-					<a class="navbar-item {{ request()->is('/')? 'is-active' : ''}}" href="/">Home</a>
+
+					@include('partials.navbar-item',['lien'=>'/','texte'=>'Accueil'])
+
+					@if(Auth()->check())
+
+					@include('partials.navbar-item',['lien'=>Auth()->user()->email,'texte'=>Auth()->user()->email])
+
+					@endif
 				</div>
 				<div class="navbar-end">
 					<div class="navbar-item">
 						<div class="buttons">
 						@if(Auth()->guest())
-							<a class="button is-primary {{ request()->is('/inscription')? 'is-active' : ''}}" href="inscription"><strong>S'inscrire</strong></a>
-							<a class="button is-light {{ request()->is('login')? 'is-active' : ''}}" href="login">Connexion</a>
+
+							@include('partials.navbar-item-dark',['lien'=>'inscription','texte'=>"S'inscrire"])
+
+							@include('partials.navbar-item-dark',['lien'=>'login','texte'=>'Connexion'])
+
 						@else
-							<a class="button is-light" href="mon-compte">{{Auth()->user()->email}}</a>
+							@include('partials.navbar-item-dark',['lien'=>'mon-compte','texte'=>'Mon compte'])
+
 							<a class="button is-light" href="logout">Deconnexion</a>
+
 						@endif
 						</div>
 					</div>
