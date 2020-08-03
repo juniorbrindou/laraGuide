@@ -6,6 +6,12 @@
 	<div class="title is-1">
 		{{$utilisateur->email}}
 	</div>
+	@auth
+	<form action="{{$utilisateur->email}}/suivis" method="POST">
+		@csrf
+		<input type="submit" name="suivre" class="button is-dark" value="Suivre">
+	</form>
+	@endauth
 </div>
 
 @if(Auth()->user()->email == Request('email'))

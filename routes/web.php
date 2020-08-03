@@ -26,6 +26,7 @@ Route::group([
 
 	Route::GET('logout','CompteController@logout');
 
+	Route::POST('{email}/suivis ','SuivisController@nouveau');
 });
 
 Route::GET('/{email}','UtilisateursController@voir');

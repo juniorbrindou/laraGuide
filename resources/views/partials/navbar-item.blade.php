@@ -1,1 +1,1 @@
-<a class="button {{ request()->is(url($lien))? 'is-dark' : 'is-light'}}" href="{{url($lien)}} ">{{$texte}}</a>
+<a class="navbar-item {{ request()->is(url($lien))? 'is-active' : ''}}" href="{{url($lien)}} ">{{$texte}}</a>
