@@ -8,7 +8,7 @@
 	</div>
 </div>
 
-@if(Auth()->user()->email == Request()->email)
+@if(Auth()->user()->email == Request('email'))
 
 <form method="POST" action="/message" class="section">
 	@csrf
@@ -32,26 +32,11 @@
 </form>
 @endif
 
-<h4 class="title is-4">Mes Messages</h4>
+
+<h4 class="title is-4">Messages</h4>
 
 <div class="section">
-	@foreach($myMessages as $mym)
-		<article class="message is-medium">
-			<div class="message-header">
-				<p>Titre</p>
-			</div>
-			<div class="message-body">
-				{{$mym->contenu}}
-			</div>
-		</article>
-	@endforeach
-
-</div>
-
-<h4 class="title is-4">Messages des Autres</h4>
-
-<div class="section">
-	@foreach($allMessages as $allm)
+	@foreach($utilisateur->messages as $allm)
 		<article class="message is-medium">
 			<div class="message-header">
 				<p>Medium message</p>

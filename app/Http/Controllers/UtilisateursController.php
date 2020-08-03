@@ -25,14 +25,10 @@ class UtilisateursController extends Controller
 
 	public function voir(){
 
-		$email = request()->email;
+		$email = request('email');
 
 		$utilisateur = Utilisateur::where('email',$email)->firstOrFail();
 
-		$allMessages = Message::orderBy('updated_at','DESC')->where('utilisateur_id','!=',Auth()->user()->id)->get();
-
-		$myMessages = Message::orderBy('updated_at','DESC')->where('utilisateur_id',Auth()->user()->id)->get();
-
-		return view('utilisateur',compact('utilisateur','allMessages','myMessages'));
+		return view('utilisateur',compact('utilisateur'));
 	}
 }
