@@ -26,17 +26,24 @@
 				<div class="navbar-start">
 					<a class="navbar-item" href="/">Home</a>
 				</div>
-
 				<div class="navbar-end">
 					<div class="navbar-item">
 						<div class="buttons">
+						@if(Auth()->guest())
 							<a class="button is-primary" href="inscription"><strong>S'inscrire</strong></a>
 							<a class="button is-light" href="login">Connexion</a>
+						@else
+							<a class="button is-light" href="mon-compte">{{Auth()->user()->email}}</a>
+							<a class="button is-light" href="logout">Deconnexion</a>
+						@endif
 						</div>
 					</div>
 				</div>
 			</div>
 		</nav>
+
+
+
 		<div class="container">
 
 			@include('flash::message')
