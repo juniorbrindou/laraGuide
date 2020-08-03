@@ -30,12 +30,6 @@ class InscriptionController extends Controller
 
 
 
-
-
-
-
-
-
     public function inscription(){
 
 		return view('inscription');

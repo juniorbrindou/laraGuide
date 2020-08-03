@@ -23,11 +23,6 @@ class UtilisateursController extends Controller
 
 
 
-
-
-
-
-
 	public function voir(){
 
 		$email = request()->email;

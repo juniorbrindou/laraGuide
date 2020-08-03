@@ -6,25 +6,21 @@ use Illuminate\Http\Request;
 use App\Message;
 class MessageController extends Controller
 {
-    public function nouveau(){
-    	if (Auth()->guest()) {
+	public function nouveau(){
 
-    		flash('Vous devez vous connecter pour acceder à cette page')->error();
+		request()->validate([
+			'contenu'=>['required','min:15']
+		]);
 
-    		return redirect('login');
-    	}
-    	request()->validate([
-    		'contenu'=>['required','min:15']
-    	]);
+		Message::create([
 
-    	Message::create([
+			'utilisateur_id'=>Auth()->user()->id,
 
-    		'utilisateur_id'=>Auth()->user()->id,
+			'contenu'=>request('contenu')
+		]);
 
-    		'contenu'=>request('contenu')
-    	]);
+		flash('Message Envoyé.')->success();
 
-    	flash('Message Envoyé.')->success();
-    	return back();
-    }
+		return back();
+	}
 }

@@ -12,12 +12,20 @@ Route::GET('login','ConnexionController@loginform');
 
 Route::POST('login','ConnexionController@login');
 
-Route::GET('/mon-compte','CompteController@accueil');
+Route::group([
 
-Route::GET('logout','CompteController@logout');
+	'middleware'=>'App\Http\Middleware\Auth',
 
-Route::POST('password_update','CompteController@password_update');
+],function(){
+
+	Route::GET('/mon-compte','CompteController@accueil');
+
+	Route::POST('/message','MessageController@nouveau');
+
+	Route::POST('password_update','CompteController@password_update');
+
+	Route::GET('logout','CompteController@logout');
+
+});
 
 Route::GET('/{email}','UtilisateursController@voir');
-
-Route::POST('/message','MessageController@nouveau');

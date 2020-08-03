@@ -16,9 +16,6 @@ class ConnexionController extends Controller
 
 
 
-
-
-
     public function login(){
     	request()->validate([
     		'email'=>['email','required'],
