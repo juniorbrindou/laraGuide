@@ -27,7 +27,7 @@ class UtilisateursController extends Controller
 
 		$email = request()->email;
 
-		$utilisateur = Utilisateur::where('email',$email)->first();
+		$utilisateur = Utilisateur::where('email',$email)->firstOrFail();
 
 		$allMessages = Message::orderBy('updated_at','DESC')->where('utilisateur_id','!=',Auth()->user()->id)->get();
 
