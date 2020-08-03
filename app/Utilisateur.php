@@ -11,4 +11,9 @@ class Utilisateur extends Model implements Authenticatable
 	use BasicAuthenticatable;
 
 	protected $fillable = ['email','password'];
+
+	public function messages(){
+
+		return $this->hasMany('App\Message');
+	}
 }
