@@ -22,7 +22,7 @@ class InscriptionController extends Controller
 			'password'=>bcrypt(request('password'))
 		]);
 		
-		return 'Enregistrement Effectué';
+		return redirect('login');
     }
 
 
