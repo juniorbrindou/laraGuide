@@ -12,7 +12,7 @@ class InscriptionController extends Controller
 
     public function form(){
 		request()->validate([
-			'email'=>['required','email'],
+			'email'=>['required','email','unique:Utilisateurs'],
 			'password'=>['required','confirmed'],
 			'password_confirmation'=>['required','min:4']
 		]);
