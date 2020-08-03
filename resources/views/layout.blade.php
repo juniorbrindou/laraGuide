@@ -27,16 +27,16 @@
 
 					@include('partials.navbar-item',['lien'=>'/','texte'=>'Accueil'])
 
-					@if(Auth()->check())
+					@auth
 
 					@include('partials.navbar-item',['lien'=>Auth()->user()->email,'texte'=>Auth()->user()->email])
 
-					@endif
+					@endauth
 				</div>
 				<div class="navbar-end">
 					<div class="navbar-item">
 						<div class="buttons">
-						@if(Auth()->guest())
+						@guest
 
 							@include('partials.navbar-item-dark',['lien'=>'inscription','texte'=>"S'inscrire"])
 
