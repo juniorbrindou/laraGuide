@@ -24,14 +24,14 @@
 
 			<div class="navbar-menu">
 				<div class="navbar-start">
-					<a class="navbar-item" href="/">Home</a>
+					<a class="navbar-item {{ request()->is('/')? 'is-active' : ''}}" href="/">Home</a>
 				</div>
 				<div class="navbar-end">
 					<div class="navbar-item">
 						<div class="buttons">
 						@if(Auth()->guest())
-							<a class="button is-primary" href="inscription"><strong>S'inscrire</strong></a>
-							<a class="button is-light" href="login">Connexion</a>
+							<a class="button is-primary {{ request()->is('/inscription')? 'is-active' : ''}}" href="inscription"><strong>S'inscrire</strong></a>
+							<a class="button is-light {{ request()->is('login')? 'is-active' : ''}}" href="login">Connexion</a>
 						@else
 							<a class="button is-light" href="mon-compte">{{Auth()->user()->email}}</a>
 							<a class="button is-light" href="logout">Deconnexion</a>
