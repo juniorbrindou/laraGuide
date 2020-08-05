@@ -12,7 +12,10 @@ class SuivisController extends Controller
 
 		$userSuivi = Utilisateur::where('email',Request('email'))->firstOrFail();
 
+		$userQuiVeutSuivre->suivis()->attach($userSuivi);
+
 		flash('Vous suivez désormais '.$userSuivi->email)->success();
+
 		return back();
 	}
 }
