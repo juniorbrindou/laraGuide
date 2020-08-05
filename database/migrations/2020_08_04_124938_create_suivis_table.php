@@ -6,28 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateSuivisTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('suivis', function (Blueprint $table) {
-            $table->id();
-            $table->integer('suiveur_id');
-            $table->integer('suivi_id');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('suivis', function (Blueprint $table) {
+			$table->id();
+			$table->integer('suiveur_id');
+			$table->integer('suivi_id');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('suivis');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('suivis');
+	}
 }
