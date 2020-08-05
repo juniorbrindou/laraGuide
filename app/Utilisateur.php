@@ -18,6 +18,6 @@ class Utilisateur extends Model implements Authenticatable
 	}
 
 	public function suivis(){
-		return $this->belongsToMany('App\Utilisateur','suiveur_id','suivi_id')
+		return $this->belongsToMany('App\Utilisateur','suiveur_id','suivi_id');
 	}
 }

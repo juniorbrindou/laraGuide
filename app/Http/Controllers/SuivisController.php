@@ -11,5 +11,8 @@ class SuivisController extends Controller
 		$userQuiVeutSuivre = Auth()->user();
 
 		$userSuivi = Utilisateur::where('email',Request('email'))->firstOrFail();
+
+		flash('Vous suivez désormais '.$userSuivi->email)->success();
+		return back();
 	}
 }
