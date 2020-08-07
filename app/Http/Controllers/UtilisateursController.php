@@ -13,7 +13,8 @@ class UtilisateursController extends Controller
 		
 	$utilisateurs = Utilisateur::all();
 
-	$utilisateursSuivis =Auth()->user()->suivis;
+	// dd(Auth()->user());
+	$utilisateursSuivis = Auth()->user()->suivis;
 
 	return view('utilisateurs',compact('utilisateurs','utilisateursSuivis'));
 	}
