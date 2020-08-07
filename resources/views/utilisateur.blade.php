@@ -7,9 +7,21 @@
 		{{$utilisateur->email}}
 	</div>
 	@auth
+
 	<form action="{{$utilisateur->email}}/suivis" method="POST">
 		@csrf
-		<input type="submit" name="suivre" class="button is-dark" value="Suivre">
+
+		@if(Auth()->user()->suit($utilisateur))
+
+			<input type="submit" name="suivre" class="button is-dark" value="Ne Plus Suivre">
+
+		@else
+
+			<input type="submit" name="suivre" class="button is-light" value="Suivre">
+
+		@endif
+
+
 	</form>
 	@endauth
 </div>
