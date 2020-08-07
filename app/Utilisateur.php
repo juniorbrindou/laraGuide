@@ -18,6 +18,15 @@ class Utilisateur extends Model implements Authenticatable
 	}
 
 	public function suivis(){
+
 		return $this->belongsToMany('App\Utilisateur','suivis','suiveur_id','suivi_id');
+
 	}
+
+	public function suit($utilisateur){
+
+		return $this->suivis()->where('suivi_id',$utilisateur->id)->exists();
+
+	}
+
 }
