@@ -17,7 +17,6 @@
 
 		@else
 
-
 			<input type="submit" name="suivre" class="button is-light" value="Suivre">
 
 		@endif
