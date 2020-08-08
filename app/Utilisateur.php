@@ -25,6 +25,7 @@ class Utilisateur extends Model implements Authenticatable
 
 	public function suit($utilisateur){
 
+
 		return $this->suivis()->where('suivi_id',$utilisateur->id)->exists();
 
 	}

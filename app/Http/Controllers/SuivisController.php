@@ -18,4 +18,17 @@ class SuivisController extends Controller
 
 		return back();
 	}
+
+	public function nePlusSuivre(){
+
+		$userQuiSuit = Auth()->user();
+
+		$userSuivi = Utilisateur::where('email',Request('email'))->firstOrFail();
+
+		$userQuiSuit->suivis()->detach($userSuivi);
+
+		flash('Vous ne Suivez plus '.$userSuivi->email)->success();
+
+		return back();
+	}
 }

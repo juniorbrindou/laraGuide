@@ -12,10 +12,11 @@
 		@csrf
 
 		@if(Auth()->user()->suit($utilisateur))
-
+			@method('DELETE')
 			<input type="submit" name="suivre" class="button is-dark" value="Ne Plus Suivre">
 
 		@else
+
 
 			<input type="submit" name="suivre" class="button is-light" value="Suivre">
 
