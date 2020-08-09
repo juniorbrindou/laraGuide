@@ -1,7 +1,9 @@
-<h1> Salut! </h1>
+@component('mail::message')
+
+# Salut!
 
 
-<p>vous etes suivi par une nouvelle personne : {{$suiveur->email}} </p>
+vous etes suivi par une nouvelle personne : *{{$suiveur->email}}*
 
 
-
+@endcomponent
