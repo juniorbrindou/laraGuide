@@ -16,7 +16,7 @@ class SuivisController extends Controller
 
 		$userQuiVeutSuivre->suivis()->attach($userSuivi);
 
-		Mail::to($userSuivi)->send(new NouveauSuiveur);
+		Mail::to($userSuivi)->send(new NouveauSuiveur($userQuiVeutSuivre));
 
 		flash('Vous suivez désormais '.$userSuivi->email)->success();
 
