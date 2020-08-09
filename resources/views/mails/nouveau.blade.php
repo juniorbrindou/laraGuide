@@ -1,3 +1,7 @@
-Salut!
+<h1> Salut! </h1>
 
-vous etes suivi par une nouvelle personne : {{$suiveur->email}}
+
+<p>vous etes suivi par une nouvelle personne : {{$suiveur->email}} </p>
+
+
+

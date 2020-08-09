@@ -29,6 +29,7 @@ class NouveauSuiveur extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.nouveau');
+        return $this->view('mails.nouveau')
+                    ->text('mails.nouveau_text');
     }
 }
