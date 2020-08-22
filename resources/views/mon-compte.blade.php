@@ -8,7 +8,7 @@
 </div>
 
 <!-- formulaire de photo de profile -->
-<form method="POST" action="avatar_update" class="section">
+<form method="POST" action="avatar_update" class="section" enctype="multipart/form-data">
 	@csrf
 	<div class="field column">
 		<div class="file">
