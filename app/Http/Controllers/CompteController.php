@@ -51,7 +51,7 @@ class CompteController extends Controller
 			'avatar'=>['required','image']
 		]);
 
-		$path = request('avatar')->store('avatars');
+		$path = request('avatar')->store('avatars','public');
 
 		Auth()->user()->update([
 			'avatar'=>$path
