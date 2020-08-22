@@ -3,7 +3,10 @@
 @section('content')
 <div class="section">
 
-	<div class="title is-1"><h1>Bienvenue {{Auth()->user()->email}}</h1></div>
+	<div class="title is-1"><h1>Bienvenue {{Auth()->user()->email}} </h1></div>
+	<figure class="image image is-96x96">
+		<img src="storage/{{Auth()->user()->avatar}}">
+	</figure>
 
 </div>
 
