@@ -50,9 +50,14 @@ class CompteController extends Controller
 		request()->validate([
 			'avatar'=>['required','image']
 		]);
+
 		$path = request('avatar')->store('avatars');
 
-		return $path;
+		Auth()->user()->update([
+			'avatar'=>$path
+		]);
+		flash('Avatar Modiffié avec succes!')->success();
+		return back();
 	}
 
 
