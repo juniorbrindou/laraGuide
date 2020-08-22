@@ -47,7 +47,12 @@ class CompteController extends Controller
 
 
 	public function avatar_update(){
-		
+		request()->validate([
+			'avatar'=>['required','image']
+		]);
+		$path = request('avatar')->store('avatars');
+
+		return $path;
 	}
 
 
