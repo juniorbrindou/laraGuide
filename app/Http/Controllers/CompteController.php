@@ -44,4 +44,11 @@ class CompteController extends Controller
 
 		return back();
 	}
+
+
+	public function avatar_update(){
+		
+	}
+
+
 }

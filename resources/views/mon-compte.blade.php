@@ -10,19 +10,25 @@
 <!-- formulaire de photo de profile -->
 <form method="POST" action="avatar_update" class="section">
 	@csrf
-	<div class="columns">
-		<div class="field column">
-			<label class="label">Nouvel Avatar</label>
-				<input class="input" type="file" name="avatar" placeholder="avatar">
-				@if($errors->has('avatar'))
-					<span class="help is-danger">{{$errors->first('avatar')}}</span>
-				@endif
+	<div class="field column">
+		<div class="file">
+			<input class="file-input" type="file" name="avatar" placeholder="avatar">
+			<span class="file-cta">
+				<span class="file-icon">
+					<i class="fas fa-upload"></i>
+				</span>
+				<span class="file-label">Choisit un avatar…</span>
+			</span>
+
+			@if($errors->has('avatar'))
+				<span class="help is-danger">{{$errors->first('avatar')}}</span>
+			@endif
 		</div>
 	</div>
 
 	<div class="field">
 		<div class="control">
-			<input type="submit" class="button is-link" name="submit" value="Modiffier Mot de Passe">
+			<input type="submit" class="button is-link" name="submit" value="Modiffier Avatar">
 		</div>
 	</div>
 </form>

@@ -6,7 +6,6 @@ Route::GET('inscription','InscriptionController@inscription');
 
 Route::POST('inscription','InscriptionController@form');
 
-Route::GET('/', 'UtilisateursController@liste');
 
 Route::GET('login','ConnexionController@loginform');
 
@@ -18,7 +17,11 @@ Route::group([
 
 ],function(){
 
+	Route::GET('/', 'UtilisateursController@liste');
+
 	Route::GET('/mon-compte','CompteController@accueil');
+
+	Route::POST('/avatar_update','CompteController@avatar_update');
 
 	Route::POST('/message','MessageController@nouveau');
 
