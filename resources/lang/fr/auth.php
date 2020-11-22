@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => "Ces informations d'identification nous sont.",
+    'failed' => "Login ou mot de passe Incorecte",
     'throttle' => 'Trop de tentatives. Veuillez réessayer dans :seconds secondes.',
 
 ];
