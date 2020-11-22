@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Utilisateur;
 use App\Message;
+use Avatar;
 
 
 class UtilisateursController extends Controller
@@ -13,13 +14,10 @@ class UtilisateursController extends Controller
 		
 	$utilisateurs = Utilisateur::all();
 
-	// dd(Auth()->user());
 	$utilisateursSuivis = Auth()->user()->suivis;
 
 	return view('utilisateurs',compact('utilisateurs','utilisateursSuivis'));
 	}
-
-
 
 
 
@@ -31,6 +29,9 @@ class UtilisateursController extends Controller
 		$email = request('email');
 
 		$utilisateur = Utilisateur::where('email',$email)->firstOrFail();
+
+		$avatar = Avatar::create('Brindou Kouadio')->getImageObject()->encode('png');
+		Storage::put('avatars/avatar.png', (string) $avatar);
 
 		return view('utilisateur',compact('utilisateur'));
 	}
